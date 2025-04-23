@@ -1,12 +1,29 @@
 "use client"
 
 import Link from "next/link"
-import { MoonIcon, SunIcon, RssIcon } from "lucide-react"
+import { MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { useCallback } from "react"
 
 export function Header() {
   const { theme, setTheme } = useTheme()
+
+  const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // 앵커 링크인 경우에만 처리
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const targetId = href.substring(1)
+      const targetElement = document.getElementById(targetId)
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-zinc-900/80 backdrop-blur-sm">
@@ -16,18 +33,23 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/portfolio" className="text-sm font-medium hover:text-zinc-400 transition-colors">
+          <Link 
+            href="#portfolio" 
+            className="text-sm font-medium hover:text-zinc-400 transition-colors"
+            onClick={(e) => handleSmoothScroll(e, '#portfolio')}
+          >
             Portfolio
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-zinc-400 transition-colors">
+          <Link 
+            href="#about" 
+            className="text-sm font-medium hover:text-zinc-400 transition-colors"
+            onClick={(e) => handleSmoothScroll(e, '#about')}
+          >
             About
           </Link>
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/rss" aria-label="RSS Feed">
-            <RssIcon className="h-5 w-5 text-zinc-400 hover:text-white transition-colors" />
-          </Link>
           <Button
             variant="ghost"
             size="icon"

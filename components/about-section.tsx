@@ -5,7 +5,7 @@ import { CodeIcon, BriefcaseIcon, YoutubeIcon } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section className="py-20 bg-zinc-950">
+    <section id="about" className="py-20 bg-zinc-950">
       <div className="container">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono">나에 대하여</h2>

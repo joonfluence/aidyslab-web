@@ -5,7 +5,7 @@ import { EyeIcon } from "lucide-react"
 
 export function VisualPortfolio() {
   return (
-    <section className="py-20">
+    <section id="portfolio" className="py-20">
       <div className="container">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono">시각 포트폴리오</h2>
 
