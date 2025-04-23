@@ -7,9 +7,9 @@ import Link from "next/link"
 
 export function ContentShowcase() {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-white dark:bg-zinc-950">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono">콘텐츠 소개</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono text-zinc-900 dark:text-zinc-100">콘텐츠 소개</h2>
 
         <Tabs defaultValue="blog" className="w-full">
           <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">

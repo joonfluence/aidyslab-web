@@ -5,9 +5,9 @@ import { EyeIcon } from "lucide-react"
 
 export function VisualPortfolio() {
   return (
-    <section id="portfolio" className="py-20">
+    <section id="portfolio" className="py-20 dark:bg-zinc-950">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono">시각 포트폴리오</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono text-zinc-100">시각 포트폴리오</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <PortfolioItem
@@ -75,7 +75,7 @@ function PortfolioItem({
         />
       </div>
       <CardContent className="p-4">
-        <h3 className="line-clamp-1 text-lg font-semibold mb-2">{title}</h3>
+        <h3 className="line-clamp-1 text-lg font-semibold mb-2 text-zinc-100">{title}</h3>
         <div className="flex items-center justify-between">
           <Badge variant="secondary" className="bg-zinc-800 hover:bg-zinc-700">
             {type}

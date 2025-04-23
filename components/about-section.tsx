@@ -5,19 +5,19 @@ import { CodeIcon, BriefcaseIcon, YoutubeIcon } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-zinc-950">
+    <section id="about" className="py-20 bg-zinc-950 dark:bg-zinc-900">
       <div className="container">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 font-mono">나에 대하여</h2>
 
           <div className="mb-10">
-            <p className="text-xl mb-6 text-zinc-300">
+            <p className="text-xl mb-6 text-zinc-300 dark:text-zinc-200">
               "4년 차 백엔드 개발자에서, 실전 자동화를 연구하는 테크 크리에이터로"
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
               {["Next.js", "React", "Node.js", "TypeScript", "Python", "LLM", "자동화", "교육"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="bg-zinc-800 hover:bg-zinc-700">
+                <Badge key={skill} variant="secondary" className="bg-zinc-800 hover:bg-zinc-700 dark:bg-zinc-700 dark:hover:bg-zinc-600">
                   {skill}
                 </Badge>
               ))}
